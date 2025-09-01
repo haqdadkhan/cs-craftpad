@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 min-h-screen">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CraftPad - Your Note Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+</head>
+
+<body class="flex flex-col items-center justify-start p-4 gap-6 font-serif text-gray-100">
+    <header
+        class="w-full max-w-3xl bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-700 text-white py-6 shadow-lg rounded-lg mb-6 select-none font-sans">
+        <h1 class="text-4xl text-center font-semibold tracking-tight drop-shadow-sm">
+            CraftPad
+        </h1>
+        <p class="text-center text-sm mt-2 font-light tracking-wide opacity-90 italic">
+            Seamless, elegant editing — all within your browser.
+        </p>
+    </header>
+
+    <main
+        class="w-full max-w-3xl bg-gray-900 bg-opacity-80 backdrop-blur-md rounded-xl shadow-xl flex flex-col gap-2 sm:gap-4 p-2 sm:p-4 ring-1 ring-gray-700">
+
+        <!-- Buttons -->
+        <div
+            class="flex gap-1 sm:gap-4 justify-center flex-nowrap overflow-x-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-purple-900">
+
+            <button onclick="button()" id="inputFile" aria-label="Open File" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-semibold py-2 px-4 md:px-6 rounded shadow font-sans transition duration-200 whitespace-nowrap
+               text-sm sm:text-base py-1.5 sm:py-2 px-3 sm:px-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 7h4l3 3h11v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+                </svg>
+                Open File
+            </button>
+
+            <button onclick="save()" id="saveFile" aria-label="Save File" disabled class="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 disabled:bg-teal-400 text-white font-semibold py-2 px-4 md:px-6 rounded shadow font-sans transition duration-200 whitespace-nowrap
+               text-sm sm:text-base py-1.5 sm:py-2 px-3 sm:px-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M7 20h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v11a2 2 0 002 2z" />
+                </svg>
+                Save
+            </button>
+
+            <button onclick="saveAs()" id="saveAsFile" aria-label="Save As File" disabled class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 disabled:bg-amber-300 text-white font-semibold py-2 px-4 md:px-6 rounded shadow font-sans transition duration-200 whitespace-nowrap
+               text-sm sm:text-base py-1.5 sm:py-2 px-3 sm:px-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                Save As
+            </button>
+        </div>
+
+        <!-- text area  -->
+        <textarea id="textarea" placeholder="Write something..."
+            class="resize-none text-sm text-gray-100 bg-gray-800 leading-relaxed border border-gray-700 rounded-lg p-4 min-h-[300px] max-h-[500px] lg:min-h-[500px] lg:max-h-[700px] overflow-y-auto whitespace-pre-wrap focus:outline-none focus:ring-1 focus:ring-purple-500 font-mono"
+            style="font-family: 'Fira Code', monospace;"></textarea>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
